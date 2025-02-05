@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 
 class FlutterVoiceListener {
-  static const MethodChannel _channel = MethodChannel('wakeword_flutter');
+  static const MethodChannel _channel = MethodChannel('flutter_voice_listener');
   static Function(String)? onTextRecognized;
 
   static void initRecognition(Function(String) callback) {

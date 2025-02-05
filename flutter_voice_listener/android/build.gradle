@@ -15,9 +15,10 @@ buildscript {
 }
 
 allprojects {
-    repositories {
+     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' } // Required for Vosk
     }
 }
 
@@ -47,10 +48,13 @@ android {
         minSdk = 21
     }
 
-    dependencies {
-        testImplementation("org.jetbrains.kotlin:kotlin-test")
-        testImplementation("org.mockito:mockito-core:5.0.0")
-    }
+     dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.alphacephei:vosk-android:0.3.32' // Vosk library
+    implementation 'net.java.dev.jna:jna:5.13.0@aar' // Use the latest JNA version
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+}
 
     testOptions {
         unitTests.all {
